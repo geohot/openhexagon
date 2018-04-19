@@ -9,10 +9,10 @@ download_to_directory() {
 #download_to_directory llvm/tools/clang http://releases.llvm.org/6.0.0/cfe-6.0.0.src.tar.xz
 
 # output directory
-mkdir usr
+mkdir -p usr
 
 # build directory
-mkdir build
+mkdir -p build
 cmake ../llvm
 
 
