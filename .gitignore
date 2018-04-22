@@ -6,5 +6,6 @@ build*/
 
 binutils
 llvm
+mclinker
 
 usr

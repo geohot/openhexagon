@@ -31,3 +31,7 @@ https://portland.source.codeaurora.org/patches/quic/hexagon/4.0/
 Most up to date linker I've found:
 https://portland.source.codeaurora.org/patches/quic/hexagon/V5/
 
+This talks about the switch to "QCLinker" based off "MCLinker" which is open source
+https://www.linuxplumbersconf.org/2015/ocw//system/presentations/3243/original/LPC2015.pdf
+https://github.com/mclinker/mclinker
+
