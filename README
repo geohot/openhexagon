@@ -2,6 +2,8 @@ NOTE: This doesn't work yet
 
 Trying to build an open source compiler for the Hexagon DSP
 
+== linker issue ==
+
 clang doesn't currently work, because it needs to "hexagon-link"
 
 "hexagon-link" is hardcoded in line 289:
@@ -9,4 +11,7 @@ https://clang.llvm.org/doxygen/Hexagon_8cpp_source.html
 
 Qualcomm has a closed source linker:
 https://developer.qualcomm.com/forum/qdn-forums/software/snapdragon-llvm-compiler-android/32950
+
+lld doesn't seem to support hexagon?
+binutils bfd has no hexagon support?
 
