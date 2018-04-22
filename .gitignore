@@ -1,4 +1,7 @@
 .*.swp
 build*
+
+binutils
 llvm
+
 usr
