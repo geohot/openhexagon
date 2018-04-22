@@ -34,8 +34,7 @@ build_llvm() {
 
   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX -DLLVM_DEFAULT_TARGET_TRIPLE=hexagon-unknown--elf -DLLVM_TARGET_ARCH=hexagon-unknown--elf -DLLVM_TARGETS_TO_BUILD=Hexagon ../llvm
 
-  make -j12
-  make install
+  make -j12 && make install
   popd
 }
 
@@ -51,8 +50,7 @@ build_mclinker() {
   mkdir -p build-mclinker
   cd build-mclinker
   ../mclinker/configure --enable-targets=hexagon --prefix=$PREFIX --with-llvm-config=$PREFIX/bin/llvm-config
-  make -j12
-  make install
+  make -j12 && make install
 
   # link
   cd $PREFIX/bin

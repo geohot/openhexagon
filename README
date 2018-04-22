@@ -35,3 +35,11 @@ This talks about the switch to "QCLinker" based off "MCLinker" which is open sou
 https://www.linuxplumbersconf.org/2015/ocw//system/presentations/3243/original/LPC2015.pdf
 https://github.com/mclinker/mclinker
 
+** FIXED! **
+
+== Target files ==
+
+Can't build them yet, they live in the SDK at:
+cp -Rv ~/Qualcomm/Hexagon_SDK/3.3.3/tools/HEXAGON_Tools/8.1.05/Tools/target usr/
+
+
