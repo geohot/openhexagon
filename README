@@ -15,3 +15,7 @@ https://developer.qualcomm.com/forum/qdn-forums/software/snapdragon-llvm-compile
 lld doesn't seem to support hexagon?
 binutils bfd has no hexagon support?
 
+There's a complete open source toolchain:
+https://sourcery.mentor.com/GNUToolchain/release2800?@template=datasheet
+But it's only up to Hexagon v5
+
