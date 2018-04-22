@@ -1,4 +1,4 @@
-An open source compiler for the Hexagon DSP
+An open source toolchain for the Hexagon DSP based off LLVM and MCLinker
 
 == Instructions ==
 
