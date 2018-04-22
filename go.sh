@@ -12,10 +12,10 @@ download_to_directory() {
 build_llvm() {
   pushd .
   # the basic three for llvm/clang
-  # switch to 4.0.0 for MCLinker
-  download_to_directory llvm http://releases.llvm.org/4.0.0/llvm-4.0.0.src.tar.xz
-  download_to_directory llvm/tools/clang http://releases.llvm.org/4.0.0/cfe-4.0.0.src.tar.xz
-  download_to_directory llvm/projects/compiler-rt http://releases.llvm.org/4.0.0/compiler-rt-4.0.0.src.tar.xz
+  # switch to 3.8.0 for MCLinker
+  download_to_directory llvm http://releases.llvm.org/3.8.0/llvm-3.8.0.src.tar.xz
+  download_to_directory llvm/tools/clang http://releases.llvm.org/3.8.0/cfe-3.8.0.src.tar.xz
+  download_to_directory llvm/projects/compiler-rt http://releases.llvm.org/3.8.0/compiler-rt-3.8.0.src.tar.xz
 
   # llvm linker (doesn't support Hexagon?)
   #download_to_directory llvm/tools/lld http://releases.llvm.org/6.0.0/lld-6.0.0.src.tar.xz
@@ -50,7 +50,7 @@ build_mclinker() {
 
   mkdir -p build-mclinker
   cd build-mclinker
-  ../mclinker/configure --enable-targets=hexagon --prefix=$PREFIX
+  ../mclinker/configure --enable-targets=hexagon --prefix=$PREFIX --with-llvm-config=$PREFIX/bin/llvm-config
   make -j12
   make install
 
