@@ -1,3 +1,5 @@
+NOTE: This doesn't work yet
+
 Trying to build an open source compiler for the Hexagon DSP
 
 clang doesn't currently work, because it needs to "hexagon-link"
