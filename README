@@ -42,4 +42,14 @@ https://github.com/mclinker/mclinker
 Can't build them yet, they live in the SDK at:
 cp -Rv ~/Qualcomm/Hexagon_SDK/3.3.3/tools/HEXAGON_Tools/8.1.05/Tools/target usr/
 
+Libraries @ usr/target/hexagon/lib/v60:
+
+Are these built with compiler-rt?
+$PREFIX/target/hexagon/lib/v60/G0/pic/initS.o
+$PREFIX/target/hexagon/lib/v60/G0/pic/libgcc.a
+$PREFIX/target/hexagon/lib/v60/G0/pic/finiS.o
+
+minimal for test to pass:
+mkdir -p usr/target/hexagon/lib/v60/G0/pic/
+cp -Rv ~/Qualcomm/Hexagon_SDK/3.3.3/tools/HEXAGON_Tools/8.1.05/Tools/target/hexagon/lib/v60/G0/pic/{initS.o,libgcc.a,finiS.o} usr/target/hexagon/lib/v60/G0/pic/
 
