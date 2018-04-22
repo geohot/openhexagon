@@ -2,6 +2,7 @@
 
 # create output directory
 mkdir -p usr
+PREFIX=$PWD/usr
 
 download_to_directory() {
   mkdir -p $1
@@ -11,9 +12,13 @@ download_to_directory() {
 build_binutils() {
   download_to_directory binutils https://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.xz
 
+  # patch to CodeAurora binutils
+  #sed -i -e 's/@colophon/@@colophon/' -e 's/doc@cygnus.com/doc@@cygnus.com/' bfd/doc/bfd.texinfo
+  #sed -i -e 's/@colophon/@@colophon/' -e 's/doc@cygnus.com/doc@@cygnus.com/' ld/ld.texinfo
+
   mkdir -p build-binutils
   cd build-binutils
-  ../binutils/configure --target=hexagon --prefix=$PWD/../usr
+  ../binutils/configure --disable-gdb --disable-tcl --disable-werror --target=hexagon --prefix=$PREFIX
   make -j12
   make install
 }
@@ -41,7 +46,7 @@ cd build-llvm
 # due to the hexagon-link issue, this doesn't work...
 #cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PWD/../usr -DLLVM_DEFAULT_TARGET_TRIPLE=hexagon-unknown-linux-gnu -DLLVM_TARGET_ARCH=hexagon-unknown-linux-gnu -DLLVM_TARGETS_TO_BUILD=Hexagon -DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON ../llvm
 
-cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PWD/../usr -DLLVM_DEFAULT_TARGET_TRIPLE=hexagon-unknown--elf -DLLVM_TARGET_ARCH=hexagon-unknown--elf -DLLVM_TARGETS_TO_BUILD=Hexagon ../llvm
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$PREFIX -DLLVM_DEFAULT_TARGET_TRIPLE=hexagon-unknown--elf -DLLVM_TARGET_ARCH=hexagon-unknown--elf -DLLVM_TARGETS_TO_BUILD=Hexagon ../llvm
 
 make -j12
 make install

@@ -1,5 +1,8 @@
+*.o
+a.out
 .*.swp
-build*
+
+build*/
 
 binutils
 llvm
