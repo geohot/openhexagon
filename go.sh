@@ -9,20 +9,6 @@ download_to_directory() {
   curl $2 | tar xvfJ - -C $1 --strip-components=1
 }
 
-build_binutils() {
-  download_to_directory binutils https://ftp.gnu.org/gnu/binutils/binutils-2.30.tar.xz
-
-  # patch to CodeAurora binutils
-  #sed -i -e 's/@colophon/@@colophon/' -e 's/doc@cygnus.com/doc@@cygnus.com/' bfd/doc/bfd.texinfo
-  #sed -i -e 's/@colophon/@@colophon/' -e 's/doc@cygnus.com/doc@@cygnus.com/' ld/ld.texinfo
-
-  mkdir -p build-binutils
-  cd build-binutils
-  ../binutils/configure --disable-gdb --disable-tcl --disable-werror --target=hexagon --prefix=$PREFIX
-  make -j12
-  make install
-}
-
 build_llvm() {
   pushd .
   # the basic three for llvm/clang
@@ -76,5 +62,4 @@ build_mclinker() {
 
 #build_llvm
 build_mclinker
-
 
