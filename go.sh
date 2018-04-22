@@ -60,6 +60,6 @@ build_mclinker() {
   popd
 }
 
-#build_llvm
+build_llvm
 build_mclinker
 
