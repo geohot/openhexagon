@@ -53,3 +53,7 @@ minimal for test to pass:
 mkdir -p usr/target/hexagon/lib/v60/G0/pic/
 cp -Rv ~/Qualcomm/Hexagon_SDK/3.3.3/tools/HEXAGON_Tools/8.1.05/Tools/target/hexagon/lib/v60/G0/pic/{initS.o,libgcc.a,finiS.o} usr/target/hexagon/lib/v60/G0/pic/
 
+== qaic ==
+
+Think this is closed source Qualcomm. It's probably easy to build a better open source replacement, the stuff it generates seems to be needlessly slow.
+
