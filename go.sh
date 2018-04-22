@@ -18,8 +18,8 @@ build_binutils() {
   make install
 }
 
-build_binutils
-exit
+#build_binutils
+#exit
 
 # the basic three for llvm/clang
 download_to_directory llvm http://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz

@@ -2,6 +2,11 @@ NOTE: This doesn't work yet
 
 Trying to build an open source compiler for the Hexagon DSP
 
+== Qualcomm SDK ==
+
+Current tools version is 8.1.05. From the document "Tools release 7.x and 8.x are based wholly on the LLVM toolchain"
+If we want to support V60, we need at least version 7.
+
 == linker issue ==
 
 clang doesn't currently work, because it needs to "hexagon-link"
@@ -9,7 +14,7 @@ clang doesn't currently work, because it needs to "hexagon-link"
 "hexagon-link" is hardcoded in line 289:
 https://clang.llvm.org/doxygen/Hexagon_8cpp_source.html
 
-Qualcomm has a closed source linker:
+Qualcomm has a closed source linker "ld.qcld":
 https://developer.qualcomm.com/forum/qdn-forums/software/snapdragon-llvm-compiler-android/32950
 
 lld doesn't seem to support hexagon?
@@ -21,7 +26,5 @@ But it's only up to Hexagon v5
 
 CodeAurora has something:
 https://portland.source.codeaurora.org/patches/quic/hexagon/
-
-Source:
 https://portland.source.codeaurora.org/patches/quic/hexagon/4.0/
 
