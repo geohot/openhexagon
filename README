@@ -1,6 +1,18 @@
-NOTE: This doesn't work yet
+An open source compiler for the Hexagon DSP
 
-Trying to build an open source compiler for the Hexagon DSP
+== Instructions ==
+
+* ./go.sh
+* Copy the "Target files" from the SDK, see below
+** TODO: Get a libc building for the DSP
+* Sadly, to build the demos "qaic" is still needed
+** TODO: Replace qaic with something better that doesn't needlessly copy memory
+
+== freethedsp ==
+
+DSP code you compile only works on Qualcomm Development boards by default.
+
+Check out freethedsp.com for a way to make it run on a phone with a Qualcomm processor.
 
 == Qualcomm SDK ==
 
